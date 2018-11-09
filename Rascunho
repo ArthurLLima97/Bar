@@ -1,0 +1,25 @@
+#include<stdio>
+
+class Cliente{
+public;
+string Nome
+string cpf
+string telefone
+}
+class Menu{
+int NumeroDrink, NumeroComida
+string Drink;
+float valorDrink
+string Comida;
+float ValorComida
+}
+class Comanda{
+string idcomanda
+float consumo
+} 
+int main(){
+Cadastro ()
+Bar()
+Caixa()
+Extrato()
+}
