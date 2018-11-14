@@ -1,10 +1,13 @@
 #include<stdio>
-
+#include<string>
+using namespace std;
 class Cliente{
-public;
-string Nome
-string cpf
-string telefone
+int Nome,cpf,telefone
+   public;
+   string Nome
+   string cpf
+   string telefone
+
 }
 class Menu{
 int NumeroDrink, NumeroComida
