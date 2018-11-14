@@ -12,7 +12,17 @@ string Drink;
 float valorDrink
 string Comida;
 float ValorComida
-}
+//* Comida:
+  -Batata fritas /cqueijo
+  -Batata fritas /squeijo
+  -Polenta /squeijo
+  -Polenta /cqueijo
+  Drink;
+  -Cerveja 
+  -agua 
+  -tropical gin
+  -Vodka com energetico
+*/
 class Comanda{
 string idcomanda
 float consumo
