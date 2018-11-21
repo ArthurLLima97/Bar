@@ -1,0 +1,14 @@
+   cout << endl;
+   cout << "----------------Comidas-------------" << endl;
+   cout << "1 - Batata fritas c/ Queijo..R$25.00" << endl;
+   cout << "2 - Batata fritas s/ Queijo..R$20.00" << endl;
+   cout << "3 - Polenta s/ Queijo........R$25.00" << endl;
+   cout << "4 - Polenta c/ Queijo........R$20.00" << endl;
+   cout << "5 - Hambúrguer...............R$15.00" << endl;
+   cout << "----------------Drinks--------------" << endl; 
+   cout << "6 - Refrigerante.............R$5.00" << endl;
+   cout << "7 - Cerveja..................R$9.00" << endl;
+   cout << "8 - Água.....................R$2.50" << endl;
+   cout << "9 - Tropical Gin.............R$15.00" << endl;
+   cout << "10 - Vodka com energetico....R$20.00" << endl;
+   cout << endl;
