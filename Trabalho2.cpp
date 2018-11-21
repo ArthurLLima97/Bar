@@ -29,7 +29,6 @@ double bar = 0;
 void cadastro();
 void cadastrar();
 void bar1();
-void caixa();
 void menu();
 void searchFile();
 void writeFile();
