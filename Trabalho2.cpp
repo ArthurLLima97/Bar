@@ -39,23 +39,16 @@ void writeFile();
 
 
 
-int main() { menu(); }
-
-
-
-
-void cadastrar(vector<string>cliente)
-{
-    ofstream clientes;
-    clientes.open("clientes.txt");
-    for(int i = 0; i < cliente.size(); i++) {
-        clientes << cliente[i] << endl;
-    }
-
-    clientes.close();
+int main() { 
+	
+	menu(); 
+	
+	return 0;
 }
 
+
 void menu() {
+	while(1){
 	int n;
 	cout << "------Lima's & Camargo's BAR------" << endl;
 	cout << endl;
@@ -70,10 +63,25 @@ void menu() {
 	{
 	case 1: cadastro();
 	case 2: bar1();
-  	case 3: return;
+  	case 3: break;
 	}
-
+	}
 }
+
+
+
+void cadastrar(vector<string>cliente)
+{
+    ofstream clientes;
+    clientes.open("clientes.txt");
+    for(int i = 0; i < cliente.size(); i++) {
+        clientes << cliente[i] << endl;
+    }
+
+    clientes.close();
+}
+
+
 
 	void cadastro() {
     int n=1;
@@ -87,26 +95,25 @@ void menu() {
 	
 		cout << "------Cadastro de Clientes------" << endl;
 		cout << "Informe o Nome:" << endl;
-	  cin >> nome;
-    cout << "Informe o CPF:" << endl;
+	  	cin >> nome;
+    		cout << "Informe o CPF:" << endl;
 		cin >> cpf;
 		cout << "Telefone:";
 		cin >> telefone;
 		cout << "Informe o Card ID" << endl;
 		cin >> card;
 
-    cliente.push_back(nome);
-    cliente.push_back(cpf);
-    cliente.push_back(telefone);
-    cliente.push_back(card);
-    cliente.push_back("0");
+    	cliente.push_back(nome);
+    	cliente.push_back(cpf);
+   	cliente.push_back(telefone);
+    	cliente.push_back(card);
+    	cliente.push_back("0");
 
 
         // client temp(nome, cpf, telefone, card);
 
 	//cliente.push_back(temp);
 
-    cliente.push_back("0");
 
     cout << "Você deseja cadastrar mais alguem?" << endl;
     cout << "1 - SIM" << endl;
@@ -116,8 +123,6 @@ void menu() {
      }
 
     	 cadastrar(cliente);
- 	 menu();
-
 
 	}
 
@@ -182,7 +187,7 @@ void menu() {
   cout << "Valor = " << valor << endl;
 
   searchFile();
-  menu();	
+
 }
 
 	
@@ -196,7 +201,7 @@ void searchFile()
 	string temp;
 	string line;
 
-  bar = valor;
+ 	bar = valor;
 
 	if (dataIn.is_open())  // Registra o valor que está na comanda
 	{
