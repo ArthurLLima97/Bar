@@ -49,23 +49,26 @@ int main() {
 
 void menu() {
 	while(1){
-	int n;
+  int n;
 	cout << "------Lima's & Camargo's BAR------" << endl;
 	cout << endl;
 	cout << "1 - Cadastro de Clientes" << endl;
 	cout << "2 - Bar" << endl;
-  	cout << "3 - Sair" << endl;
+  cout << "3 - Sair" << endl;
 	cout << endl;
 	cout << "Informe a operação:" ;
 	cin >> n;
 
-	  switch (n)
-	{
-	case 1: cadastro();
-	case 2: bar1();
-  	case 3: break;
+	     switch (n)
+    	{
+	    case 1: cadastro();
+      break;
+	    case 2: bar1();
+      break;
+      case 3: exit(0);
+      }
 	}
-	}
+
 }
 
 
@@ -84,14 +87,14 @@ void cadastrar(vector<string>cliente)
 
 
 	void cadastro() {
-    int n=1;
+    int m=1;
     vector<string>cliente;
     string nome;
 		string cpf;
 		string telefone;
 		string card;
 
-    while(n==1){
+    while(m==1){
 	
 		cout << "------Cadastro de Clientes------" << endl;
 		cout << "Informe o Nome:" << endl;
@@ -105,7 +108,7 @@ void cadastrar(vector<string>cliente)
 
     	cliente.push_back(nome);
     	cliente.push_back(cpf);
-   	cliente.push_back(telefone);
+   	  cliente.push_back(telefone);
     	cliente.push_back(card);
     	cliente.push_back("0");
 
@@ -118,7 +121,7 @@ void cadastrar(vector<string>cliente)
     cout << "Você deseja cadastrar mais alguem?" << endl;
     cout << "1 - SIM" << endl;
     cout << "2 - NÃO" << endl;
-    cin >> n;
+    cin >> m;
   
      }
 
