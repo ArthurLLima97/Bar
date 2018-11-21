@@ -40,11 +40,10 @@ void writeFile();
 
 
 
-int main() {
-  
-	menu();
-	
-}
+int main() { menu(); }
+
+
+
 
 void cadastrar(vector<string>cliente)
 {
@@ -58,14 +57,12 @@ void cadastrar(vector<string>cliente)
 }
 
 void menu() {
-	//system("cls");
 	int n;
 	cout << "------Lima's & Camargo's BAR------" << endl;
 	cout << endl;
 	cout << "1 - Cadastro de Clientes" << endl;
 	cout << "2 - Bar" << endl;
-	cout << "3 - Caixa" << endl;
-  cout << "4 - Sair" << endl;
+  	cout << "3 - Sair" << endl;
 	cout << endl;
 	cout << "Informe a operação:" ;
 	cin >> n;
@@ -74,10 +71,7 @@ void menu() {
 	{
 	case 1: cadastro();
 	case 2: bar1();
-	case 3: caixa();
-  case 4: searchFile();
-  case 0: menu();
-  default: break;
+  	case 3: return;
 	}
 
 }
@@ -109,9 +103,9 @@ void menu() {
     cliente.push_back("0");
 
 
-   // client temp(nome, cpf, telefone, card);
+        // client temp(nome, cpf, telefone, card);
 
-	//	cliente.push_back(temp);
+	//cliente.push_back(temp);
 
     cliente.push_back("0");
 
@@ -122,15 +116,14 @@ void menu() {
   
      }
 
-     
-		cadastrar(cliente);
+    	 cadastrar(cliente);
+ 	 menu();
 
-    menu();
 
 	}
 
 	void bar1() {
-		//system("cls");
+		
 
    int b = 0;
    int c = 1;
@@ -186,17 +179,14 @@ void menu() {
 	}
   
   }
-  cout << "Valor = " << valor << endl;
-  searchFile();
-  menu();
-	}
 
-	void caixa() {
-		//system("cls");
-		int a;
-		cout << "Informe o ID:" << endl;
-		cin >> a;
+  cout << "Valor = " << valor << endl;
+
+  searchFile();
+  menu();	
 }
+
+	
 
 void searchFile()
 {
