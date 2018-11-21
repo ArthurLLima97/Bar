@@ -1,3 +1,4 @@
+-----------------Comidas------------- 
 1 - Batata fritas c/ Queijo....R$25.00
 2 - Batata fritas s/ Queijo....R$20.00
 3 - Polenta s/ Queijo..........R$25.00
