@@ -2,9 +2,22 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+
 #include "cliente.h"
 
 using namespace std;
+
+
+void cadastro( vector<cad>cliente );
+void cadastrar ();
+void bar1();
+void menu();
+void searchFile();
+void writeFile();
+void cardapio();
+
+
+
 
 
 
@@ -239,15 +252,3 @@ if (dataOut.is_open())  // Grava o valor lido
 	}
   cout << endl;
   cout << endl;
-}
-
-
-
-
-int main() { 
-  
-	menu(); 
-	
-	return 0;
-}
-
