@@ -2,53 +2,23 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "cliente.h"
 
 using namespace std;
 
-/*
-class client {
-public:
-    string nome;
-		string cpf;
-		string telefone;
-		string card;
-	
-	client(string nome, string cpf, string telefone, string card) {
-		this->nome = nome;
-		this->cpf = cpf;
-		this->telefone = telefone;
-		this->card = card;
-	}
-};
-*/
+
+
 string a;
 double valor = 0;
 double atual = 0; 
 double bar = 0; 
 
-void cadastro();
-void cadastrar();
-void bar1();
-void menu();
-void searchFile();
-void writeFile();
-void cardapio();
-
-
-
-
-
-
-
-int main() { 
-	
-	menu(); 
-	
-	return 0;
-}
 
 
 void menu() {
+  
+  vector<cad>cliente;
+
 	while(1){
   int n;
 	cout << "------Lima's & Camargo's BAR------" << endl;
@@ -62,7 +32,7 @@ void menu() {
 
 	     switch (n)
     	{
-	    case 1: cadastro();
+	    case 1: cadastro(cliente);
       break;
 	    case 2: bar1();
       break;
@@ -74,22 +44,9 @@ void menu() {
 
 
 
-void cadastrar(vector<string>cliente)
-{
-    ofstream clientes;
-    clientes.open("clientes.txt");
-    for(int i = 0; i < cliente.size(); i++) {
-        clientes << cliente[i] << endl;
-    }
-
-    clientes.close();
-}
-
-
-
-	void cadastro() {
+	void cadastro( vector<cad>cliente ) {
     int m=1;
-    vector<string>cliente;
+
     string nome;
 		string cpf;
 		string telefone;
@@ -107,16 +64,10 @@ void cadastrar(vector<string>cliente)
 		cout << "Informe o Card ID";
 		cin >> card;
 
-    	cliente.push_back(nome);
-    	cliente.push_back(cpf);
-   	  cliente.push_back(telefone);
-    	cliente.push_back(card);
-    	cliente.push_back("0");
-
-
-        // client temp(nome, cpf, telefone, card);
-
-	//cliente.push_back(temp);
+    
+    cad c(nome, cpf, telefone, card);
+	  
+    cliente.push_back(c);
 
 
     cout << "Você deseja cadastrar mais alguem?" << endl;
@@ -126,9 +77,27 @@ void cadastrar(vector<string>cliente)
   
      }
 
-    	 cadastrar(cliente);
+
+
+    cadastrar(cliente);
 
 	}
+
+
+
+void cadastrar(vector<cad> cliente)
+{
+    ofstream clientes;
+    clientes.open("clientes.txt");
+    for(int i = 0; i < cliente.size(); i++) {
+        clientes << cliente[i] << endl;
+    }
+
+    clientes.close();
+}
+
+
+
 
 	void bar1() {
 		
@@ -180,6 +149,26 @@ void cadastrar(vector<string>cliente)
   searchFile();
 
 }
+
+
+
+void cardapio(){
+
+ifstream menu;
+string temp;
+cout << endl;
+menu.open("Comidas&Drinks.txt");
+
+  for(int i=0; i < 12; i++)
+  {
+  getline(menu, temp);
+  cout << temp << endl;
+  }
+
+menu.close();
+}
+
+
 
 	
 
@@ -253,18 +242,12 @@ if (dataOut.is_open())  // Grava o valor lido
 }
 
 
-void cardapio(){
 
-ifstream menu;
-string temp;
-cout << endl;
-menu.open("Comidas&Drinks.txt");
 
-  for(int i=0; i < 12; i++)
-  {
-  getline(menu, temp);
-  cout << temp << endl;
-  }
-
-menu.close();
+int main() { 
+  
+	menu(); 
+	
+	return 0;
 }
+
