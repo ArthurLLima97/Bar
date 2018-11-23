@@ -32,6 +32,7 @@ void bar1();
 void menu();
 void searchFile();
 void writeFile();
+void cardapio();
 
 
 
@@ -96,14 +97,14 @@ void cadastrar(vector<string>cliente)
 
     while(m==1){
 	
-		cout << "------Cadastro de Clientes------" << endl;
-		cout << "Informe o Nome:" << endl;
-	  	cin >> nome;
-    		cout << "Informe o CPF:" << endl;
+		cout << "\n------Cadastro de Clientes------\n" << endl;
+		cout << "Informe o Nome:";
+	  cin >> nome;
+    cout << "Informe o CPF:";
 		cin >> cpf;
 		cout << "Telefone:";
 		cin >> telefone;
-		cout << "Informe o Card ID" << endl;
+		cout << "Informe o Card ID";
 		cin >> card;
 
     	cliente.push_back(nome);
@@ -135,22 +136,9 @@ void cadastrar(vector<string>cliente)
    int b = 0;
    int c = 1;
 
-   cout << endl;
-   cout << "----------------Comidas-------------" << endl;
-   cout << "1 - Batata fritas c/ Queijo..R$25.00" << endl;
-   cout << "2 - Batata fritas s/ Queijo..R$20.00" << endl;
-   cout << "3 - Polenta s/ Queijo........R$25.00" << endl;
-   cout << "4 - Polenta c/ Queijo........R$20.00" << endl;
-   cout << "5 - Hambúrguer...............R$15.00" << endl;
-   cout << "----------------Drinks--------------" << endl; 
-   cout << "6 - Refrigerante.............R$5.00" << endl;
-   cout << "7 - Cerveja..................R$9.00" << endl;
-   cout << "8 - Água.....................R$2.50" << endl;
-   cout << "9 - Tropical Gin.............R$15.00" << endl;
-   cout << "10 - Vodka com energetico....R$20.00" << endl;
-   cout << endl;
- 
-   cout << "Informe o Nome?:" << endl;
+  cardapio();
+
+   cout << "Informe o Nome?:";
 	 cin >> a;
 
    while (c == 1){ 
@@ -262,4 +250,21 @@ if (dataOut.is_open())  // Grava o valor lido
 	}
   cout << endl;
   cout << endl;
+}
+
+
+void cardapio(){
+
+ifstream menu;
+string temp;
+cout << endl;
+menu.open("Comidas&Drinks.txt");
+
+  for(int i=0; i < 12; i++)
+  {
+  getline(menu, temp);
+  cout << temp << endl;
+  }
+
+menu.close();
 }
