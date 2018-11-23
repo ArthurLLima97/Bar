@@ -8,8 +8,8 @@
 using namespace std;
 
 
-void cadastro( vector<cad>cliente );
-void cadastrar ();
+void cadastro (vector<cad>cliente );
+void cadastrar (vector<cad> cliente);
 void bar1();
 void menu();
 void searchFile();
@@ -100,11 +100,13 @@ void menu() {
 
 void cadastrar(vector<cad> cliente)
 {
+int zero = 0;
     ofstream clientes;
     clientes.open("clientes.txt");
     for(int i = 0; i < cliente.size(); i++) {
-        clientes << cliente[i] << endl;
+        clientes << cliente[i].nome << endl << cliente[i].cpf  << endl << cliente[i].telefone << endl << cliente[i].card << endl << zero << endl;
     }
+    
 
     clientes.close();
 }
@@ -252,3 +254,14 @@ if (dataOut.is_open())  // Grava o valor lido
 	}
   cout << endl;
   cout << endl;
+}
+
+
+
+
+int main() { 
+  
+	menu(); 
+	
+	return 0;
+}
